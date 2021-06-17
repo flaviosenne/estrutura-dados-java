@@ -1,0 +1,59 @@
+public class ListaLigada {
+    private Elemento primeiro;
+    private Elemento ultimo;
+    private int tamanho;
+
+    public ListaLigada() {
+        this.tamanho = 0;
+    }
+
+    public void setPrimeiro(Elemento primeiro) {
+        this.primeiro = primeiro;
+    }
+
+    public void setUltimo(Elemento ultimo) {
+        this.ultimo = ultimo;
+    }
+
+    public void setTamanho(int tamanho) {
+        this.tamanho = tamanho;
+    }
+
+    public int getTamanho() {
+        return this.tamanho;
+    }
+
+    public Elemento getPrimeiro() {
+        return this.primeiro;
+    }
+
+    public Elemento getUltimo() {
+        return this.ultimo;
+    }
+
+    public void adicionar(String novoValor) {
+        Elemento novoElemento = new Elemento(novoValor);
+        if (this.primeiro == null && this.ultimo == null) {
+            this.primeiro = novoElemento;
+            this.ultimo = novoElemento;
+        } else {
+            this.ultimo.setProximo(novoElemento);
+            this.ultimo = novoElemento;
+        }
+        this.tamanho++;
+    }
+
+    public void remover(String novoValor) {
+
+    }
+
+    public Elemento get(int posicao) {
+        Elemento atual = this.primeiro;
+        for (int i = 0; i < posicao; i++) {
+            if (atual.getProximo() != null) {
+                atual = atual.getProximo();
+            }
+        }
+        return atual;
+    }
+}
