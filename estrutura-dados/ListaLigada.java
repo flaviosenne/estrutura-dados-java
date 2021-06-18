@@ -31,7 +31,7 @@ public class ListaLigada {
         return this.ultimo;
     }
 
-    public void adicionar(String novoValor) {
+    public void adicionar(Integer novoValor) {
         Elemento novoElemento = new Elemento(novoValor);
         if (this.primeiro == null && this.ultimo == null) {
             this.primeiro = novoElemento;

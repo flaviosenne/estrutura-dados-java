@@ -1,15 +1,15 @@
 public class Elemento {
-    private String valor;
+    private Integer valor;
     private Elemento proximo;
 
-    public Elemento(String novoValor){
+    public Elemento(Integer novoValor){
         this.valor = novoValor;
     }
     public void setProximo(Elemento proximo) {
         this.proximo = proximo;
     }
 
-    public void setValor(String valor) {
+    public void setValor(Integer valor) {
         this.valor = valor;
     }
 
@@ -17,7 +17,7 @@ public class Elemento {
         return this.proximo;
     }
 
-    public String getValor() {
+    public Integer getValor() {
         return this.valor;
     }
 
