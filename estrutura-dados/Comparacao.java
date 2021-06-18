@@ -7,7 +7,7 @@ public class Comparacao {
         ArrayList<Integer> vetor = new ArrayList<>();
 
         // adicionar elementos
-        int limit = 10000;
+        int limit = 100000;
         long tempoInicial = System.currentTimeMillis();
         for (int i = 0; i < limit; i++) {
             vetor.add(i);
