@@ -40,8 +40,9 @@ public class Comparacao {
 
 
         tempoInicial = System.currentTimeMillis();
-        for (int i = 0; i < vetor.size(); i++) {
-            lista.get(i);
+        IteratorListaLigada iterator = lista.getIterator();
+        while(iterator.temProximo()){
+            iterator.getProximo();
         }
         tempoFinal = System.currentTimeMillis();
         

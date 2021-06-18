@@ -64,10 +64,10 @@ public class Main {
     private static void listaEncadiada() {
         ListaLigada lista = new ListaLigada();
         System.out.println("tamanho agora " + lista.getTamanho());
-        lista.adicionar("AC");
-        lista.adicionar("BA");
-        lista.adicionar("CE");
-        lista.adicionar("SP");
+        // lista.adicionar("AC");
+        // lista.adicionar("BA");
+        // lista.adicionar("CE");
+        // lista.adicionar("SP");
         System.out.println("tamanho agora " + lista.getTamanho());
         System.out.println("primeiro " + lista.getPrimeiro().getValor());
         System.out.println("ultimo " + lista.getUltimo().getValor());

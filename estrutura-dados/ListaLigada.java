@@ -56,4 +56,8 @@ public class ListaLigada {
         }
         return atual;
     }
+
+    public IteratorListaLigada getIterator(){
+        return new IteratorListaLigada(this.primeiro);
+    }
 }
