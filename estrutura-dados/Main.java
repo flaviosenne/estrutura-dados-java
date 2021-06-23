@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // array();
-        // buscaLinear();
+        array();
+        buscaLinear();
         listaEncadiada();
     }
 
@@ -62,7 +62,7 @@ public class Main {
     }
 
     private static void listaEncadiada() {
-        ListaLigada lista = new ListaLigada();
+        ListaLigada<Integer> lista = new ListaLigada<Integer>();
         System.out.println("tamanho agora " + lista.getTamanho());
         lista.adicionar(1);
         lista.adicionar(11);

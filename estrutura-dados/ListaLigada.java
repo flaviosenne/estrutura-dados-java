@@ -1,17 +1,17 @@
-public class ListaLigada {
-    private Elemento primeiro;
-    private Elemento ultimo;
+public class ListaLigada<TIPO> {
+    private Elemento<TIPO> primeiro;
+    private Elemento<TIPO> ultimo;
     private int tamanho;
 
     public ListaLigada() {
         this.tamanho = 0;
     }
 
-    public void setPrimeiro(Elemento primeiro) {
+    public void setPrimeiro(Elemento<TIPO> primeiro) {
         this.primeiro = primeiro;
     }
 
-    public void setUltimo(Elemento ultimo) {
+    public void setUltimo(Elemento<TIPO> ultimo) {
         this.ultimo = ultimo;
     }
 
@@ -23,16 +23,16 @@ public class ListaLigada {
         return this.tamanho;
     }
 
-    public Elemento getPrimeiro() {
+    public Elemento<TIPO> getPrimeiro() {
         return this.primeiro;
     }
 
-    public Elemento getUltimo() {
+    public Elemento<TIPO> getUltimo() {
         return this.ultimo;
     }
 
-    public void adicionar(Integer novoValor) {
-        Elemento novoElemento = new Elemento(novoValor);
+    public void adicionar(TIPO novoValor) {
+        Elemento<TIPO> novoElemento = new Elemento<TIPO>(novoValor);
         if (this.primeiro == null && this.ultimo == null) {
             this.primeiro = novoElemento;
             this.ultimo = novoElemento;
@@ -43,9 +43,9 @@ public class ListaLigada {
         this.tamanho++;
     }
 
-    public void remover(Integer valorProcurado) {
-        Elemento anterior = null;
-        Elemento atual = this.primeiro;
+    public void remover(TIPO valorProcurado) {
+        Elemento<TIPO> anterior = null;
+        Elemento<TIPO> atual = this.primeiro;
         for (int i = 0; i < this.getTamanho(); i++) {
             if (atual.getValor().equals(valorProcurado)) {
                 if (this.tamanho == 1) {
@@ -69,8 +69,8 @@ public class ListaLigada {
         }
     }
 
-    public Elemento get(int posicao) {
-        Elemento atual = this.primeiro;
+    public Elemento<TIPO> get(int posicao) {
+        Elemento<TIPO> atual = this.primeiro;
         for (int i = 0; i < posicao; i++) {
             if (atual.getProximo() != null) {
                 atual = atual.getProximo();

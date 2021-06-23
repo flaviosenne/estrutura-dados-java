@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Comparacao {
     public static void main(String[] args) {
-        ListaLigada lista = new ListaLigada();
+        ListaLigada<Integer> lista = new ListaLigada<Integer>();
 
         ArrayList<Integer> vetor = new ArrayList<>();
 
