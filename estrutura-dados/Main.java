@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         // array();
         // buscaLinear();
-        // listaEncadiada();
+        listaEncadiada();
     }
 
     private static void array() {
@@ -64,15 +64,23 @@ public class Main {
     private static void listaEncadiada() {
         ListaLigada lista = new ListaLigada();
         System.out.println("tamanho agora " + lista.getTamanho());
-        // lista.adicionar("AC");
-        // lista.adicionar("BA");
-        // lista.adicionar("CE");
-        // lista.adicionar("SP");
-        System.out.println("tamanho agora " + lista.getTamanho());
+        lista.adicionar(1);
+        lista.adicionar(11);
+        lista.adicionar(22);
+        lista.adicionar(33);
         System.out.println("primeiro " + lista.getPrimeiro().getValor());
         System.out.println("ultimo " + lista.getUltimo().getValor());
-        System.out.println("na posição 1 " + lista.get(1).getValor());
-        System.out.println("na posição 2 " + lista.get(2).getValor());
+        System.out.println("na posição 1: " + lista.get(1).getValor());
+        System.out.println("na posição 2: " + lista.get(2).getValor());
+        System.out.println("tamanho agora " + lista.getTamanho());
+        System.out.println("----------------------------- ");
+        lista.remover(1);
+        lista.remover(11);
+        lista.remover(22);
+        lista.remover(33);
+        lista.adicionar(44);
+        lista.remover(44);
+        System.out.println("tamanho agora " + lista.getTamanho());
     }
 
 }
