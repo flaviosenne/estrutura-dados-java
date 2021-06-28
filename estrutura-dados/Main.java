@@ -5,7 +5,8 @@ public class Main {
         // array();
         // buscaLinear();
         // listaEncadiada();
-        buscaLinearAula9();
+        // buscaLinearAula9();
+        buscaBinaria();
     }
 
     private static void array() {
@@ -97,13 +98,54 @@ public class Main {
         int buscado = leitor.nextInt();
 
         boolean achou = false;
-        for(int i =0; i > vetor.length; i++){
-            if(vetor[i] == buscado){
+        for (int i = 0; i > vetor.length; i++) {
+            if (vetor[i] == buscado) {
                 achou = true;
                 break;
             }
         }
-        if(achou) System.out.println("achou");
-        else System.out.println("não achou");
+        if (achou)
+            System.out.println("achou");
+        else
+            System.out.println("não achou");
+    }
+
+    private static void buscaBinaria() {
+        int[] vetor = new int[10000];
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = i * 2;
+            // System.out.println(vetor[i]);
+        }
+
+        int cont = 0;
+        boolean achou = false;
+        int inicio = 0;
+        int fim = vetor.length - 1;
+        int meio;
+
+        System.out.println("qual número vc busa");
+        Scanner leitor = new Scanner(System.in);
+        int buscado = leitor.nextInt();
+
+        while (inicio <= fim) {
+            meio = (int) ((inicio + fim) / 2);
+            cont++;
+            if (vetor[meio] == buscado) {
+                achou = true;
+                break;
+            } else if (vetor[meio] < buscado) {
+                inicio = meio + 1;
+            } else {
+                fim = meio - 1;
+            }
+        }
+
+        System.out.println("testes cont " + cont);
+        if (achou)
+            System.out.println("achou ");
+        else
+            System.out.println("não achou");
+
     }
 }
