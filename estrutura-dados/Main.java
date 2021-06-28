@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        array();
-        buscaLinear();
-        listaEncadiada();
+        // array();
+        // buscaLinear();
+        // listaEncadiada();
+        buscaLinearAula9();
     }
 
     private static void array() {
@@ -83,4 +84,26 @@ public class Main {
         System.out.println("tamanho agora " + lista.getTamanho());
     }
 
+    private static void buscaLinearAula9() {
+        int[] vetor = new int[8];
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = (int) (Math.random() * 100);
+            System.out.println(vetor[i]);
+        }
+
+        System.out.println("qual número vc busa");
+        Scanner leitor = new Scanner(System.in);
+        int buscado = leitor.nextInt();
+
+        boolean achou = false;
+        for(int i =0; i > vetor.length; i++){
+            if(vetor[i] == buscado){
+                achou = true;
+                break;
+            }
+        }
+        if(achou) System.out.println("achou");
+        else System.out.println("não achou");
+    }
 }
