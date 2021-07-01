@@ -6,7 +6,8 @@ public class Main {
         // buscaLinear();
         // listaEncadiada();
         // buscaLinearAula9();
-        buscaBinaria();
+        // buscaBinaria();
+        bubbleSort();
     }
 
     private static void array() {
@@ -147,5 +148,35 @@ public class Main {
         else
             System.out.println("não achou");
 
+    }
+
+    private static void bubbleSort(){
+        int[] vetor = new int[100000];
+
+
+        for(int i = 0; i<vetor.length; i++){
+            vetor[i] = (int) (Math.random() * vetor.length);
+            // System.out.println(vetor[i]);
+        }
+
+        long inicio = System.currentTimeMillis();
+        // BUBBLE SORT 0(N^2)
+        int aux;
+        for(int  i= 0; i< vetor.length; i++){ // complexidade de  O (N)
+            for(int j = i; j < vetor.length; j++){// complexidade de  O (N-1)
+                if(vetor[i] > vetor[j]){
+                    aux = vetor[j];
+                    vetor[j] = vetor[i];
+                    vetor[i] = aux;
+                }
+            }
+        }
+        long fim = System.currentTimeMillis();
+
+        System.out.println("tempo: "+(fim - inicio));
+        System.out.println("-------------");
+        for(int i = 0; i<vetor.length; i++){
+            // System.out.println(vetor[i]);
+        }
     }
 }
