@@ -7,7 +7,8 @@ public class Main {
         // listaEncadiada();
         // buscaLinearAula9();
         // buscaBinaria();
-        bubbleSort();
+        // bubbleSort();
+        insertionSort();
     }
 
     private static void array() {
@@ -150,11 +151,10 @@ public class Main {
 
     }
 
-    private static void bubbleSort(){
+    private static void bubbleSort() {
         int[] vetor = new int[100000];
 
-
-        for(int i = 0; i<vetor.length; i++){
+        for (int i = 0; i < vetor.length; i++) {
             vetor[i] = (int) (Math.random() * vetor.length);
             // System.out.println(vetor[i]);
         }
@@ -162,9 +162,9 @@ public class Main {
         long inicio = System.currentTimeMillis();
         // BUBBLE SORT 0(N^2)
         int aux;
-        for(int  i= 0; i< vetor.length; i++){ // complexidade de  O (N)
-            for(int j = i; j < vetor.length; j++){// complexidade de  O (N-1)
-                if(vetor[i] > vetor[j]){
+        for (int i = 0; i < vetor.length; i++) { // complexidade de O (N)
+            for (int j = i; j < vetor.length; j++) {// complexidade de O (N-1)
+                if (vetor[i] > vetor[j]) {
                     aux = vetor[j];
                     vetor[j] = vetor[i];
                     vetor[i] = aux;
@@ -173,10 +173,37 @@ public class Main {
         }
         long fim = System.currentTimeMillis();
 
-        System.out.println("tempo: "+(fim - inicio));
+        System.out.println("tempo: " + (fim - inicio));
         System.out.println("-------------");
-        for(int i = 0; i<vetor.length; i++){
+        for (int i = 0; i < vetor.length; i++) {
             // System.out.println(vetor[i]);
+        }
+    }
+
+    private static void insertionSort() {
+        int[] vet = new int[10];
+
+        for (int i = 0; i < vet.length; i++) {
+            vet[i] = (int) (Math.random() * vet.length);
+        }
+        for (int i = 0; i < vet.length; i++) {
+            System.out.println(vet[i]);
+        }
+        System.out.println("-----------------");
+
+        int aux, j;
+        for (int i = 1; i < vet.length; i++) {
+            aux = vet[i];
+            j = i - 1;
+            while (j >= 0 && vet[j] > aux) {
+                vet[j + 1] = vet[j];
+                j--;
+            }
+            vet[j + 1] = aux;
+        }
+
+        for (int i = 0; i < vet.length; i++) {
+            System.out.println(vet[i]);
         }
     }
 }
