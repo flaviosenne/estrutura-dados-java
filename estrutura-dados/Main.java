@@ -8,7 +8,8 @@ public class Main {
         // buscaLinearAula9();
         // buscaBinaria();
         // bubbleSort();
-        insertionSort();
+        // insertionSort();
+        selectionSort();
     }
 
     private static void array() {
@@ -206,4 +207,36 @@ public class Main {
             System.out.println(vet[i]);
         }
     }
+
+    private static void selectionSort() {
+        int[] vetor = new int[10];
+
+        for (int i = 0; i < vetor.length; i++) {
+            vetor[i] = (int) (Math.random() * vetor.length);
+        }
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println(vetor[i]);
+        }
+        System.out.println("---------------------");
+
+        int menor, aux;
+        for (int i = 0; i < vetor.length; i++) {
+            menor = i;
+            for (int j = i + 1; j < vetor.length; j++) {
+                if (vetor[j] < vetor[menor]) {
+                    menor = j;
+                }
+            }
+            aux = vetor[menor];
+            vetor[menor] = vetor[i];
+            vetor[i] = aux;
+        }
+
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println(vetor[i]);
+        }
+
+    }
+
 }
