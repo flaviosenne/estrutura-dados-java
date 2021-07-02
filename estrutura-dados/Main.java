@@ -10,7 +10,8 @@ public class Main {
         // bubbleSort();
         // insertionSort();
         // selectionSort();
-        heapSort();
+        // heapSort();
+        new Recursividade().execute();
     }
 
     private static void array() {
